@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function LoadingScreen({
   autoDismiss = true,
-  duration = 1800,
+  duration = 500,
   onComplete,
 }: {
   autoDismiss?: boolean;
@@ -25,7 +25,7 @@ export default function LoadingScreen({
         setVisible(false);
         setExiting(false);
         if (onComplete) onComplete();
-      }, 500);
+      }, 250);
       return () => clearTimeout(exitTimer);
     }, duration);
     return () => clearTimeout(timer);
@@ -43,9 +43,9 @@ export default function LoadingScreen({
         setVisible(false);
         setExiting(false);
         if (onComplete) onComplete();
-      }, 500);
+      }, 250);
       return () => clearTimeout(exitTimer);
-    }, 1200);
+    }, 250);
 
     return () => clearTimeout(timer);
   }, [pathname, autoDismiss, onComplete]);

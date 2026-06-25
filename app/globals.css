@@ -660,7 +660,7 @@ html {
   background: rgba(248, 250, 252, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
   overflow: hidden;
 }
 
