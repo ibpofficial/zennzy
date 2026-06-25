@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function LoadingScreen({
   autoDismiss = true,
@@ -15,7 +15,6 @@ export default function LoadingScreen({
   const [visible, setVisible] = useState(true);
   const [exiting, setExiting] = useState(false);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   // Trigger exit after initial load or when autoDismiss becomes false -> true
   useEffect(() => {
@@ -49,7 +48,7 @@ export default function LoadingScreen({
     }, 1200);
 
     return () => clearTimeout(timer);
-  }, [pathname, searchParams, autoDismiss, onComplete]);
+  }, [pathname, autoDismiss, onComplete]);
 
   if (!visible) return null;
 
